@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EarthDex – Encyclopedia of Life</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="🌍" />
+</head>
+
+<body class="bg-gradient-to-br from-gray-100 to-white text-gray-800 flex flex-col min-h-screen">
+
+  <!-- 🔼 Header -->
+  <header class="bg-white/80 backdrop-blur shadow-md p-4 px-6 flex justify-between items-center sticky top-0 z-50">
+    <h1 class="text-3xl font-extrabold tracking-tight text-teal-700">🌍 EarthDex</h1>
+    <p class="text-sm text-gray-500">Explore Earth's lifeforms — Powered by <a class="underline text-teal-500"
+        href="https://api.inaturalist.org" target="_blank">iNaturalist API</a></p>
+  </header>
+
+  <!-- 🔍 Filters -->
+  <section class="bg-teal-50 border-b p-6 md:px-10 flex flex-wrap gap-3 justify-center items-center">
+    <input id="searchInput" type="text" placeholder="Search species (e.g. tiger, eagle, fern)"
+      class="border border-teal-300 p-2 rounded-md shadow-sm w-60 focus:outline-teal-400 transition" />
+
+    <select id="filterClass" class="border border-teal-300 p-2 rounded-md shadow-sm bg-white">
+      <option value="">All Classes</option>
+      <option value="Mammalia">🦁 Mammals</option>
+      <option value="Aves">🐦 Birds</option>
+      <option value="Reptilia">🦎 Reptiles</option>
+      <option value="Insecta">🐞 Insects</option>
+      <option value="Amphibia">🐸 Amphibians</option>
+      <option value="Actinopterygii">🐟 Fish</option>
+      <option value="Plantae">🌱 Plants</option>
+      <option value="Fungi">🍄 Fungi</option>
+    </select>
+
+    <label class="flex items-center gap-2 text-sm text-gray-700">
+      <input id="extinctToggle" type="checkbox" class="accent-red-600" />
+      Show Extinct <span class="text-xl">🦖</span>
+    </label>
+
+    <button id="searchBtn"
+      class="bg-teal-600 text-white px-5 py-2 rounded-md shadow hover:bg-teal-700 font-medium transition">🔍
+      Search</button>
+  </section>
+
+  <!-- 🧠 Results Area -->
+  <main id="results"
+    class="p-6 md:px-10 grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+    <!-- Cards will be injected here -->
+  </main>
+
+  <!-- 🔄 Pagination + Info -->
+  <div class="flex flex-col items-center gap-2 pb-10">
+    <div id="pageInfo" class="text-sm text-gray-600"></div>
+    <div class="flex gap-4">
+      <button id="prevPage"
+        class="px-4 py-2 bg-gray-300 hover:bg-gray-400 text-sm font-medium rounded shadow">⬅️ Prev</button>
+      <button id="nextPage"
+        class="px-4 py-2 bg-gray-300 hover:bg-gray-400 text-sm font-medium rounded shadow">Next ➡️</button>
+    </div>
+  </div>
+
+  <!-- 🔽 Footer -->
+  <footer class="bg-white border-t mt-auto py-6 text-center text-xs text-gray-500">
+    Built with ❤️ by Nature Nerds | 🌐 EarthDex © 2025<br />
+    Taxonomy data from <a href="https://api.inaturalist.org" class="text-teal-600 underline"
+      target="_blank">iNaturalist.org</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
